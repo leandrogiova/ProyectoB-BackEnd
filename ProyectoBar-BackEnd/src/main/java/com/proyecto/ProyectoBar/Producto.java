@@ -40,8 +40,6 @@ public Long getNumeroProducto() {
     public void setNumeroProducto(Long numeroProducto) {
         this.numeroProducto = numeroProducto;
     }
-    //    public Producto(ProductoClavePrimaria productoId, String nombre, int precio){
-//        this.productoId = productoId;
     public Producto(Long id, Long numeroProducto,String nombre, int precio){
         this.id = id;
         this.setNumeroProducto(numeroProducto);
@@ -65,13 +63,5 @@ public Long getNumeroProducto() {
         this.precio = precio;
     }
 
-/*
-    public ProductoClavePrimaria getProductoClavePrimaria(){
-        return this.productoId;
-    }
-    public void setProductoClavePrimaria(ProductoClavePrimaria productoId){
-        this.productoId = productoId;
-    }
-*/
 
 }
