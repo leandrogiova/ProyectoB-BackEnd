@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import ProyectoBBackEnd.Bar.models.Mesa_Producto;
 import ProyectoBBackEnd.Bar.models.Producto;
 import ProyectoBBackEnd.Bar.services.ProductoService;
 
@@ -19,7 +21,7 @@ public class ProductoController {
     @Autowired
     private ProductoService productoService;
 
-    @GetMapping
+    @GetMapping("/lista")
     public List<Producto> todosLosProductos(){
         return productoService.getAllProductos();
     }

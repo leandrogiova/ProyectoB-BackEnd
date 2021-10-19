@@ -14,8 +14,19 @@ public class MesaProductosService {
     @Autowired
     private MesaProductosRepository mesaProductosRepo;
 
+
+
     public List<Mesa_Producto> getAllMesasAbiertas(){
         return mesaProductosRepo.findAll();
     }
+
+
+
+    public void enviarProductoMesa(Mesa_Producto m1){
+        mesaProductosRepo.save(m1);
+    }
+
+
+
 
 }

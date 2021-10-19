@@ -1,7 +1,7 @@
 package ProyectoBBackEnd.Bar.models;
 
 import java.sql.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,31 +10,35 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Mesa_Producto")
 public class Mesa_Producto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany()
-    @JoinColumn(name="id_producto",  nullable = false)
-    private List<Producto> listaProductos;
-
     @Column(name = "numero_mesa")
     private int numero_mesa;
 
+    @OneToMany()
+    private List<Producto> listaProductos;
+
+
+
+    @Column(name = "estado")
+    private boolean estado;
+
     public Mesa_Producto(){
     }
-    public Mesa_Producto(Long id, List<Producto> listaProductos, int numero_mesa){
+    public Mesa_Producto(Long id, int numero_mesa,  List<Producto> listaProductos,  boolean estado){
         this.id = id;   
+        this.estado = estado;
         this.listaProductos = listaProductos;
         this.numero_mesa = numero_mesa;
-
 
 
     }
@@ -51,6 +55,14 @@ public class Mesa_Producto {
     }
     public void setNumero_mesa(int numeroMesa){
         this.numero_mesa = numeroMesa;
+    }
+
+
+    public boolean getEstado(){
+        return this.estado;
+    }
+    public void setEstado(boolean estado){
+        this.estado = estado;
     }
 
 }
@@ -82,14 +94,8 @@ public class Mesa_Producto {
 
 
 
-    @Column(name = "estado")
-    private boolean estado;
-    public boolean getEstado(){
-        return this.estado;
-    }
-    public void setEstado(boolean estado){
-        this.estado = estado;
-    }
+
+
 
 
 

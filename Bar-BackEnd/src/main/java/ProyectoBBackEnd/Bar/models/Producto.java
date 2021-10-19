@@ -1,10 +1,13 @@
 package ProyectoBBackEnd.Bar.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,6 +29,9 @@ public class Producto {
 
     private int precio;
 
+//    @ManyToMany()
+//    private List<Mesa_Producto> listaMesasProductos;
+
     public Producto(){        
     }
 
@@ -34,6 +40,7 @@ public class Producto {
         this.numeroProducto = numeroProducto;
         this.nombre = nombre;
         this.precio = precio;
+
     }
 
 
@@ -43,6 +50,16 @@ public class Producto {
     public void setId(Long id){
         this.id = id;
     }
+
+/*
+    public List<Mesa_Producto> getlistaMesasProductos(){
+        return this.listaMesasProductos;
+    }
+    public void setlistaMesasProductos(List<Mesa_Producto> lista){ 
+        this.listaMesasProductos = lista;
+    }
+*/
+
 
 
     public int getNumeroProducto() {
