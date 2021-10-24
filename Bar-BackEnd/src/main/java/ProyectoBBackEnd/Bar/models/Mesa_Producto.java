@@ -27,10 +27,10 @@ public class Mesa_Producto {
     @OneToMany()
     private List<Producto> listaProductos;
 
-
-
     @Column(name = "estado")
     private boolean estado;
+
+
 
     public Mesa_Producto(){
     }
@@ -39,8 +39,6 @@ public class Mesa_Producto {
         this.estado = estado;
         this.listaProductos = listaProductos;
         this.numero_mesa = numero_mesa;
-
-
     }
 
     public void setListaProductos(List<Producto> listaProductos){
