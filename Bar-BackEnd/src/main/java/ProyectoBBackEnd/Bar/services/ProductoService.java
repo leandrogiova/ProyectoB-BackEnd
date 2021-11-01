@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import ProyectoBBackEnd.Bar.models.Producto;
 import ProyectoBBackEnd.Bar.repositorys.ProductoRepository;
@@ -17,6 +18,10 @@ public class ProductoService {
 
     public List<Producto> getAllProductos(){
         return productoRepo.findAll();
+    }
+
+    public void enviarProducto(Producto p1){
+        productoRepo.save(p1);
     }
 
 

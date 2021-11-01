@@ -22,7 +22,7 @@ public class Mesa_Producto {
     private Long id;
 
     @Column(name = "numero_mesa")
-    private int numero_mesa;
+    private Long numero_mesa;
 
     @OneToMany()
     private List<Producto> listaProductos;
@@ -34,11 +34,18 @@ public class Mesa_Producto {
 
     public Mesa_Producto(){
     }
-    public Mesa_Producto(Long id, int numero_mesa,  List<Producto> listaProductos,  boolean estado){
+    public Mesa_Producto(Long id, Long numero_mesa,  List<Producto> listaProductos,  boolean estado){
         this.id = id;   
         this.estado = estado;
         this.listaProductos = listaProductos;
         this.numero_mesa = numero_mesa;
+    }
+
+    public void setId(Long id){
+        this.id = id;
+    }
+    public Long getId(){
+        return this.id;
     }
 
     public void setListaProductos(List<Producto> listaProductos){
@@ -48,10 +55,10 @@ public class Mesa_Producto {
         return listaProductos;
     }
 
-    public int getNumero_mesa(){
+    public Long getNumero_mesa(){
         return this.numero_mesa;
     }
-    public void setNumero_mesa(int numeroMesa){
+    public void setNumero_mesa(Long numeroMesa){
         this.numero_mesa = numeroMesa;
     }
 
