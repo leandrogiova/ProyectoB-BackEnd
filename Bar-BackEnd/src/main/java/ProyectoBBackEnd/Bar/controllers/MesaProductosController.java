@@ -89,16 +89,21 @@ public class MesaProductosController {
 
 //    @PutMapping("/updateMesa")
     @PostMapping("/updateMesa")
-    public Mesa_Producto updateMesa_Producto(@RequestBody Mesa_Producto m1){
+    public void actualizar(@RequestBody Mesa_Producto m1){
+
+//    public Mesa_Producto updateMesa_Producto(@RequestBody Mesa_Producto m1){
 
 //        Mesa_Producto mesaActual = mesaProductoRepo.findById(m1.getId())
 
         Mesa_Producto mesaActual = mesaProductoRepo.findById(m1.getId()).orElse(null);
 
+        //actualiza el numero de mesa y la lista de productos
         mesaActual.setNumero_mesa(m1.getNumero_mesa());
+        mesaActual.setListaProductos(m1.getListaProductos());
         
-        Mesa_Producto updateMesa = mesaProductoRepo.save(mesaActual);
-        return updateMesa;
+        mesaProductoRepo.save(mesaActual);
+//        Mesa_Producto updateMesa = mesaProductoRepo.save(mesaActual);
+//        return updateMesa;
     }
 
 
