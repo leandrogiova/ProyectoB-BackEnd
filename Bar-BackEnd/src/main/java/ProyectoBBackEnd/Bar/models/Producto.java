@@ -1,14 +1,10 @@
 package ProyectoBBackEnd.Bar.models;
 
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -23,18 +19,18 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "numero_producto", unique=true)
     private int numeroProducto;
 
+    @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "precio")
     private int precio;
 
-//    @ManyToMany()
-//    private List<Mesa_Producto> listaMesasProductos;
 
     public Producto(){        
     }
-
     public Producto(Long id, String nombre, int precio, int numeroProducto) {
         this.id = id;
         this.numeroProducto = numeroProducto;
@@ -50,16 +46,6 @@ public class Producto {
     public void setId(Long id){
         this.id = id;
     }
-
-/*
-    public List<Mesa_Producto> getlistaMesasProductos(){
-        return this.listaMesasProductos;
-    }
-    public void setlistaMesasProductos(List<Mesa_Producto> lista){ 
-        this.listaMesasProductos = lista;
-    }
-*/
-
 
 
     public int getNumeroProducto() {
@@ -82,24 +68,5 @@ public class Producto {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
- 
+    } 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

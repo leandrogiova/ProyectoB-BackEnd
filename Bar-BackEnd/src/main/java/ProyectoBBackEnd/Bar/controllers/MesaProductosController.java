@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -72,21 +69,8 @@ public class MesaProductosController {
         return updatedNote;
     }
 
-
-
-    m1:
-        id = 10
-        numero de mesa = 1;
-        estado = 1;
-
-    mesaActual: 
-            id = 10
-            numero de mesa = 2; PASA A TENER (nuero de mesa) = 3;
-            estado = 1;
-
-    
     */
-
+    
 //    @PutMapping("/updateMesa")
     @PostMapping("/updateMesa")
     public void actualizar(@RequestBody Mesa_Producto m1){
@@ -98,13 +82,30 @@ public class MesaProductosController {
         Mesa_Producto mesaActual = mesaProductoRepo.findById(m1.getId()).orElse(null);
 
         //actualiza el numero de mesa y la lista de productos
-        mesaActual.setNumero_mesa(m1.getNumero_mesa());
+//        mesaActual.setNumero_mesa(m1.getNumero_mesa());
         mesaActual.setListaProductos(m1.getListaProductos());
         
         mesaProductoRepo.save(mesaActual);
 //        Mesa_Producto updateMesa = mesaProductoRepo.save(mesaActual);
 //        return updateMesa;
     }
+
+
+
+
+
+    @PostMapping("/cobrarMesa")
+    public void cobrarMesa(@RequestBody Mesa_Producto m1){
+
+        Mesa_Producto mesaActual = mesaProductoRepo.findById(m1.getId()).orElse(null);
+
+        //actualiza el estado de la mesa para cerarla
+        mesaActual.setEstado(m1.getEstado());
+        
+        mesaProductoRepo.save(mesaActual);
+    }
+
+
 
 
 
