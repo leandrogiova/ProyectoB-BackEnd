@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.print.attribute.standard.DateTimeAtCompleted;
 
 @Entity
 public class Mesa_Producto {
@@ -131,70 +130,3 @@ public class Mesa_Producto {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-   
-/*
-    @Column(name = "fecha")
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @Column(name = "detalle")
-    private String detalle;
-
-    
-    public Mesa_Producto(Long id, List<Producto> listaProductos, int numero_mesa, boolean estado, Date fecha, int precio_temporal, String forma_pago, String detalle ){
-        this.id = id;
-        this.listaProductos = listaProductos;
-        this.numero_mesa = numero_mesa;
-        this.estado = estado;
-        this.fecha = fecha;
-        this.precio_temporal = precio_temporal;
-        this.detalle = detalle;
-    }
-
-
-
-
-
-        @Column(name = "precio_temporal")
-    private int precio_temporal;
-    @Column(name = "forma_pago")
-    private String forma_pago;
-    public String getFormaPago() {
-        return forma_pago;
-    }
-    public void setFormaPago(String formaPago) {
-        this.forma_pago = formaPago;
-    }
-
-    public int getPrecioTemporal() {
-        return precio_temporal;
-    }
-    public void setPrecioTemporal(int precioTemporal) {
-        this.precio_temporal = precioTemporal;
-    }
-
-
-    */

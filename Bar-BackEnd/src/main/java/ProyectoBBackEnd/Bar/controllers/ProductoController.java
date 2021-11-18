@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import ProyectoBBackEnd.Bar.models.Mesa_Producto;
 import ProyectoBBackEnd.Bar.models.Producto;
 import ProyectoBBackEnd.Bar.services.ProductoService;
 
