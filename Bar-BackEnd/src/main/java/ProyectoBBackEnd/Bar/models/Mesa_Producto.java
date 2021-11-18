@@ -1,7 +1,7 @@
 package ProyectoBBackEnd.Bar.models;
 
-import java.sql.Date;
-import java.util.*;
+import java.time.*;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.print.attribute.standard.DateTimeAtCompleted;
 
 @Entity
 public class Mesa_Producto {
@@ -27,7 +28,7 @@ public class Mesa_Producto {
     private boolean estado;
 
     @Column(name = "fecha")
-    private Date fecha;
+    private LocalDateTime fecha;
 
     @Column(name = "precioTotal")
     private int precioTotal;
@@ -44,7 +45,7 @@ public class Mesa_Producto {
 
     public Mesa_Producto(){
     }
-    public Mesa_Producto(Long id, Long numero_mesa, List<Producto> listaProductos, boolean estado, Date fecha,
+    public Mesa_Producto(Long id, Long numero_mesa, List<Producto> listaProductos, boolean estado, LocalDateTime fecha,
             int precioTotal, int precioTemporal, String formaDePago, String detalle) {
         this.id = id;
         this.numero_mesa = numero_mesa;
@@ -106,10 +107,10 @@ public class Mesa_Producto {
     }
     
     
-    public Date getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 

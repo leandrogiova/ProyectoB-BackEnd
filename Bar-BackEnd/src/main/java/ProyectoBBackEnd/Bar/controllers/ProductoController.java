@@ -32,5 +32,4 @@ public class ProductoController {
         productoService.enviarProducto(p1);
     }
 
-
 }
